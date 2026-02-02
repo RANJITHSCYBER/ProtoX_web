@@ -305,26 +305,41 @@ body {
 .project-front {
     background: var(--accent-gray);
     color: var(--text-dark);
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .project-back {
     background: #1a1a1a;
     color: var(--primary-light);
-    transform: rotateY(180deg);
     border-left: 3px solid var(--primary-light);
+    opacity: 0;
+    pointer-events: none;
 }
 
 .project-card:hover .project-front {
-    transform: rotateY(180deg);
+    opacity: 0;
+    pointer-events: none;
 }
 
 .project-card:hover .project-back {
-    transform: rotateY(0deg);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.project-card.active .project-front {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.project-card.active .project-back {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .project-image {
-    width: 90%;
-    height: 200px;
+    width: 95%;
+    height: 280px;
     object-fit: contain;
     background: rgba(255, 255, 255, 0.02);
     margin-bottom: 0.8rem;
@@ -685,8 +700,8 @@ body {
 
 /* Scroll-triggered animations */
 .animate-on-scroll {
-    opacity: 0;
-    transform: translateY(30px);
+    opacity: 1;
+    transform: translateY(0);
     transition: all 0.8s ease-out;
 }
 
@@ -732,8 +747,8 @@ body {
     }
 
     .project-image {
-        width: 85%;
-        height: 160px;
+        width: 90%;
+        height: 240px;
     }
 
     .works-grid {
@@ -797,8 +812,8 @@ body {
     }
 
     .project-image {
-        width: 80%;
-        height: 130px;
+        width: 85%;
+        height: 200px;
     }
 
     .hero-title {

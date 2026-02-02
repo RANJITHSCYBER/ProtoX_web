@@ -115,7 +115,7 @@ const cards = document.querySelectorAll('.project-card, .founder-card');
 cards.forEach(card => {
     card.addEventListener('touchend', function(e) {
         if (window.innerWidth <= 768) {
-            this.style.transform = this.style.transform === 'rotateY(180deg)' ? 'rotateY(0deg)' : 'rotateY(180deg)';
+            this.classList.toggle('active');
         }
     });
 });
